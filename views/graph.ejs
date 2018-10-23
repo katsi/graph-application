@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1><%= title %></h1>
+
+<p>My first graph.</p>
+
+<ul>
+    <% params.forEach(function(param){ %>
+    <li><a href="/entity?iri=<%= encodeURIComponent(param.iri) %>"><%= param.class_label %></a></li>
+    <% }); %>
+</ul>
+
+</body>
+</html>
