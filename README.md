@@ -26,6 +26,22 @@ Make sure you have installed [Docker](https://docs.docker.com/install/)
 
 Make sure you have [Node.js installed](https://nodejs.org/en/) and `npm` that should come with it. You can check this by running `node -v` and `npm -v` )
 
+## Set up your local repository
+
+Either download or `git clone` this repository to your local machine.
+
+Open up a terminal and navigate to this repository.
+
+
+***For Mac users***
+If you downloaded this repository, most likely a ZIP file is in your
+`Downloads` folder. Unzip the file and then navigate to
+the folder, for example with:
+
+```
+cd Downloads/graph-application-master/
+```
+
 
 ## Running a Graph Database
 
@@ -116,12 +132,24 @@ prefix ns: <http://www.example.org/myexample#>
 
 ## Setting up a Simple Web App
 You should have now a way to upload and read data to your graph database. Next step is to build a simple web app
-on top of the data you are storing in your graph database. For this we are using a simple [express JavaScript](https://expressjs.com/en/starter/installing.html) file and one [Embedded JavaScript](http://ejs.co/) template file
+on top of the data you are storing in your graph database. For this we are using a
+simple [express JavaScript](https://expressjs.com/en/starter/installing.html) file and
+one [Embedded JavaScript](http://ejs.co/) template file
 to render a simple view with data coming out of the graph.
 
-***Requirements:*** Make sure you have [Node.js installed](https://nodejs.org/en/) and `npm` that should come with it. You can check this by running `node -v` and `npm -v` )
+Navigate to the local folder of this project (it would be called `graph-application` or `graph-application-master`).
 
-Install express
+***Requirements:*** Make sure you have [Node.js installed](https://nodejs.org/en/) and
+`npm` that should come with it. You can check this by running `node -v` and `npm -v` )
+
+
+Install all the dependencies of this project with:
+
+```
+npm install
+```
+
+Install express:
 
 ```
 npm install express --save
@@ -133,27 +161,28 @@ Run the [index.js](index.js) file of this repo with:
 node index.js
 ```
 
-Navigate with your browser to [localhost port 3000](http://localhost:3000/) and you should see the friendly "Hello World!" greeting. To understand
+Navigate with your browser to [localhost port 3000](http://localhost:3000/) and you should see the
+friendly "Hello World!" greeting. To understand
 why you are seeing this, look at line 23 in the [index.js](index.js) file.
 
 ### Query the graph, get data back, and show it
 
-We are using the Embedded JavaScript templates to render a view and pass some parameters to it. Make sure you have [ejs installed](npm install ejs):
+We are using the Embedded JavaScript templates to render a view and pass some parameters to it.
+Make sure you have [ejs installed](http://ejs.co/):
 
 ```
 npm install ejs
 ```
 
-Now navigate to [http://localhost:3000/graph](http://localhost:3000/graph) to see a view that is rendered out of data that comes from the graph.
+Now navigate to [http://localhost:3000/graph](http://localhost:3000/graph)
+to see a view that is rendered out of data that comes from the graph.
 
 To understand what is happening in this code, let's go through it:
 
 #### Defining the query in index.js, getting results for it and rendering them with graph.ejs
 
-
 On line 12 of the [index.js](index.js) file, we are defining QUERY3 from
 our examples above into the variable `query`.
-
 
 On line 25 of the [index.js](index.js) file, we are defining what needs to be done when '/graph' is requested in the URL.
 On line 26 we are passing the `query` variable as part of a GET Request that calls the Blazegraph SPARQL endpoint
