@@ -49,7 +49,7 @@ docker ps
 Navigate to the dashboard of Blazegraph (localhost port 8889)[http://localhost:8889/bigdata/]
 and choose the tab "Update"
 
-![](blazegraph_screenshot.png)
+![](images/blazegraph_screenshot.png)
 
 
 
