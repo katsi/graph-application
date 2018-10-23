@@ -124,7 +124,31 @@ Run the [index.js](index.js) file of this repo with:
 node index.js
 ```
 
-Navigate with your browser to [localhost port 3000](http://localhost:3000/) and you should see the friendly "Hello World!" greeting.
+Navigate with your browser to [localhost port 3000](http://localhost:3000/) and you should see the friendly "Hello World!" greeting. To understand
+why you are seeing this, look at line 23 in the [index.js](index.js) file.
 
 ### Query the graph, get data back, and show it
-In this repo,
+
+We are using the Embedded JavaScript templates to render a view and pass some parameters to it. Make sure you have [ejs installed](npm install ejs):
+
+```
+npm install ejs
+```
+
+Now navigate to [http://localhost:3000/graph](http://localhost:3000/graph) to see a view that is rendered out of data that comes from the graph.
+
+To understand what is happening in this code, let's go through it:
+
+#### Defining the query in index.js, getting results for it and rendering them with graph.ejs
+
+
+On line 12 of the [index.js](index.js) file, we are defining QUERY3 from
+our examples above into the variable `query`.
+
+
+On line 25 of the [index.js](index.js) file, we are defining what needs to be done when '/graph' is requested in the URL.
+On line 26 we are passing the `query` variable as part of a GET Request that calls the Blazegraph SPARQL endpoint
+as defined in line 8 and asks for the response to be in JSON format `{headers: {"Accept":"application/sparql-results+json"}}`.
+
+From that response we are extracting the `iri` and `labels` values that should be returned from our query. These values are then
+pushed to the variable `results`. These results are read by the [graph.ejs](graph.ejs) template and rendered as a view.
