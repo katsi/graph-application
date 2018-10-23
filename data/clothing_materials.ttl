@@ -1,0 +1,51 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ns: <http://www.example.org/myexample#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+
+ns:clothing_material a owl:Class ;
+    rdfs:comment "All instances of this class are materials that can be used in clothing that are worn by humans." .
+
+ns:clothing_material a owl:Class ;
+    rdfs:comment "All instances of this class are materials that can be used in clothing that are worn by humans." .
+
+ns:leather a ns:clothing_material ;
+    rdfs:comment "A natural material made from animal hides." ;
+    owl:sameAs wd:Q286 .
+
+ns:metal a ns:clothing_material ;
+    rdfs:comment "A mineral-based material that is durable and shiny or matte according to its finish." .
+
+ns:paper a ns:clothing_material ;
+    rdfs:comment "Wood pulp based material that might be used for making straw hats and bags." .
+
+ns:straw a ns:clothing_material ;
+    rdfs:comment "Natural material straw with yellow hue to make hats and bags." .
+
+ns:textile a ns:clothing_material ;
+    rdfs:comment "Woven, knitted, interlaces, or entangled threads create a textile that is usually named after the origin of the threads and/or the type of its construction. " .
+
+ns:cotton rdfs:subClassOf ns:textile ;
+    rdfs:comment "Material made out of the cotton fibre, a soft, fluffy staple fibre that grows in a boll, or protective case, around the seeds of the cotton plants of the genus Gossypium in the mallow family Malvaceae. The fiber is almost pure cellulose." ;
+    owl:sameAs wd:Q11457 .
+
+ns:lyocell rdfs:subClassOf ns:textile ;
+    rdfs:comment "Lyocell is a form of rayon which consists of cellulose fibre made from dissolving pulp (bleached wood pulp) using dry jet-wet spinning." ;
+    owl:sameAs wd:Q899347 .
+
+ns:linen rdfs:subClassOf ns:textile ;
+    rdfs:comment "Linen is a textile made from the fibers of the flax plant. Linen is laborious to manufacture, but the fiber is very absorbent and garments made of linen are valued for their exceptional coolness and freshness in hot weather." ;
+    owl:sameAs wd:Q1426327 .
+
+ns:cashmere rdfs:subClassOf ns:textile ;
+    rdfs:comment "Cashmere wool, usually simply known as cashmere, is a luxury fiber obtained from cashmere goats and other types of goat. The word cashmere is an old spelling of Kashmir, the geographical region in north of India." ;
+    owl:sameAs wd:Q333631 .
+
+ns:silk rdfs:subClassOf ns:textile ;
+    rdfs:comment "Silk is a natural protein fiber, some forms of which can be woven into textiles. The protein fiber of silk is composed mainly of fibroin and is produced by certain insect larvae to form cocoons." ;
+    owl:sameAs wd:Q37681 .
+
+ns:denim rdfs:subClassOf ns:cotton ;
+    rdfs:comment "Denim is a cotton twill fabric with a particular weaving made out of white and blue threads." ;
+    owl:sameAs wd:Q652698 .
