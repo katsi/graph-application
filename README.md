@@ -104,16 +104,27 @@ prefix ns: <http://www.example.org/myexample#>
 }
 ```
 
-## Creating a Simple Web App on top of your Graph
+## Setting up a Simple Web App
 You should have now a way to upload and read data to your graph database. Next step is to build a simple web app
 on top of the data you are storing in your graph database. For this we are using a simple [express JavaScript](https://expressjs.com/en/starter/installing.html) file and one [Embedded JavaScript](http://ejs.co/) template file
 to render a simple view with data coming out of the graph.
 
+***Requirements:*** Make sure you have [Node.js installed](https://nodejs.org/en/) and `npm` that should come with it. You can check this by running `node -v` and `npm -v` )
 
+Install express
 
+```
+npm install express --save
 
+```
 
+Run the [index.js](index.js) file of this repo with:
 
-After that in the root folder
+```
+node index.js
+```
 
-```npm install```
+Navigate with your browser to [localhost port 3000](http://localhost:3000/) and you should see the friendly "Hello World!" greeting.
+
+### Query the graph, get data back, and show it
+In this repo,

@@ -11,16 +11,16 @@ console.log("URL set to: " + SPARQL_QUERY_URL)
 
 var query = encodeURIComponent(`prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix ns: <http://www.example.org/myexample#>
 
-    SELECT ?class_labels ?iri
+
+    SELECT ?labels ?iri
         WHERE {
-    ?iri rdfs:label ?class_labels ;
-    rdf:type owl:Class .
+    ?iri rdfs:label ?labels ;
+        rdfs:subClassOf*/rdf:type ns:clothing_material .
 }`)
 
 app.get('/', (req, res) => res.send('Hello World!'))
-
-app.get('/hello', (req, res) => res.send('Hello Big World!'))
 
 app.get('/graph', (req, res) => {
     fetch(SPARQL_QUERY_URL + query, {headers: {"Accept":"application/sparql-results+json"}})
@@ -29,7 +29,7 @@ app.get('/graph', (req, res) => {
     var bindings = body.results.bindings
     var results = []
     bindings.forEach((binding) => {
-    results.push({"class_label": binding.class_labels.value, "iri": binding.iri.value})
+    results.push({"label": binding.labels.value, "iri": binding.iri.value})
 })
     //res.send(results)
     res.render('graph', {title: "My great graph!", params: results})
