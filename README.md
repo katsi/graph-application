@@ -17,6 +17,9 @@ If you want to explore the topic further in some of your applications, you can u
 
 Make sure you have installed [Docker](https://docs.docker.com/install/)
 
+Make sure you have [Node.js installed](https://nodejs.org/en/) and `npm` that should come with it. You can check this by running `node -v` and `npm -v` )
+
+
 ## Running a Graph Database
 
 For this tutorial I am using [Blazegraph](https://wiki.blazegraph.com/wiki/index.php/About_Blazegraph) graph database,
@@ -115,7 +118,6 @@ Install express
 
 ```
 npm install express --save
-
 ```
 
 Run the [index.js](index.js) file of this repo with:
