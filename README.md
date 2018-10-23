@@ -1,5 +1,5 @@
 # graph-application
-A simple web application that is talking to the graph database Blazegraph. The point of this tutorial is to provide anyone
+A simple web application that is talking to the graph database Blazegraph. The point of this tutorial is to provide anyone versed in RDF
 the ability to run a graph database and write a simple web application over it.
 
 ## Knowledge Graphs
@@ -14,6 +14,10 @@ If you want to explore the topic further in some of your applications, you can u
 # Getting started
 
 ## Requirements
+
+This tutorial does not teach the basics of Resource Description Framework (RDF), Turtle syntax, and SPARQL syntax. It is also not explaining the basics of JavaScript syntax.
+Some adequacy in all these languages is required. But you do not need to know these languages to go through this tutorial, since everything is written out for you in
+the form of examples.
 
 Make sure you have installed [Docker](https://docs.docker.com/install/)
 
