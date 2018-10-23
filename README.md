@@ -15,8 +15,11 @@ If you want to explore the topic further in some of your applications, you can u
 
 ## Requirements
 
-This tutorial does not teach the basics of Resource Description Framework (RDF), Turtle syntax, and SPARQL syntax. It is also not explaining the basics of JavaScript syntax.
-Some adequacy in all these languages is required. But you do not need to know these languages to go through this tutorial, since everything is written out for you in
+This tutorial does not teach the basics of [Resource Description Framework (RDF)](https://en.wikipedia.org/wiki/Resource_Description_Framework),
+[Turtle syntax](https://en.wikipedia.org/wiki/Turtle_(syntax)), and [SPARQL syntax](https://en.wikipedia.org/wiki/SPARQL).
+It is also not explaining the basics of JavaScript syntax.
+Some adequacy in all these languages is required. But you do not need to
+know these languages to go through this tutorial, since everything is written out for you in
 the form of examples.
 
 Make sure you have installed [Docker](https://docs.docker.com/install/)
