@@ -59,7 +59,57 @@ The contents of the TTL file appears in the empty text box and by clicking "Upda
 
 ### Query Data from Blazegraph
 
-TBD
+Congratulations! If you have managed to follow all steps of this tutorial, then you are now running a graph database with some data in it. You can test this data by running a few SPARQL queries for it.
+
+Navigate to the Blazegraph Dashboard and go to the tab that says "Query". In the big text input field add your query and then press "Execute" to run it. Below are some example queries that you can run:
+
+
+***QUERY 1*** See all classes defined in your graph
+```
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+    SELECT ?class_labels ?iri
+        WHERE {
+    ?iri rdfs:label ?class_labels ;
+        rdf:type owl:Class .
+}
+```
+
+***QUERY 2*** See all immediate instances of "clothing material"
+```
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix ns: <http://www.example.org/myexample#>
+
+
+    SELECT ?class_labels ?iri
+        WHERE {
+    ?iri rdfs:label ?class_labels ;
+        rdf:type ns:clothing_material .
+}
+```
+
+***QUERY 3*** See all instances including sub-classes of instances of "clothing material"
+```
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix ns: <http://www.example.org/myexample#>
+
+
+    SELECT ?class_labels ?iri
+        WHERE {
+    ?iri rdfs:label ?class_labels ;
+        rdfs:subClassOf*/rdf:type ns:clothing_material .
+}
+```
+
+## Creating a Simple Web App on top of your Graph
+You should have now a way to upload and read data to your graph database. Next step is to build a simple web app
+on top of the data you are storing in your graph database. For this we are using a simple [express JavaScript](https://expressjs.com/en/starter/installing.html) file and one [Embedded JavaScript](http://ejs.co/) template file
+to render a simple view with data coming out of the graph.
+
+
 
 
 
