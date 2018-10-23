@@ -163,7 +163,7 @@ node index.js
 
 Navigate with your browser to [localhost port 3000](http://localhost:3000/) and you should see the
 friendly "Hello World!" greeting. To understand
-why you are seeing this, look at line 23 in the [index.js](index.js) file.
+why you are seeing this, look at line 23 in the [index.js](index.js#l23) file.
 
 ### Query the graph, get data back, and show it
 
@@ -181,10 +181,10 @@ To understand what is happening in this code, let's go through it:
 
 #### Defining the query in index.js, getting results for it and rendering them with graph.ejs
 
-On line 12 of the [index.js](index.js) file, we are defining QUERY3 from
+On line 12 of the [index.js](index.js#L12) file, we are defining QUERY3 from
 our examples above into the variable `query`.
 
-On line 25 of the [index.js](index.js) file, we are defining what needs to be done when '/graph' is requested in the URL.
+On line 25 of the [index.js](index.js#L25-L37) file, we are defining what needs to be done when '/graph' is requested in the URL.
 On line 26 we are passing the `query` variable as part of a GET Request that calls the Blazegraph SPARQL endpoint
 as defined in line 8 and asks for the response to be in JSON format `{headers: {"Accept":"application/sparql-results+json"}}`.
 
