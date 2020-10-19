@@ -1,0 +1,6 @@
+FROM lyrasis/blazegraph:2.1.5
+
+RUN mkdir /tmp/data
+COPY src/data /tmp/data
+
+CMD ["/tmp/data/dataload.sh"]
