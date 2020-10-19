@@ -3,9 +3,10 @@ const fetch = require('node-fetch');//to be able to create a client
 const express = require('express')
 const app = express()
 
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs');
 
-const SPARQL_QUERY_URL = process.env.SPARQL_QUERY_URL || 'http://localhost:8889/bigdata/sparql?query='
+
+const SPARQL_QUERY_URL = process.env.ENVIRONMENT? `http://${process.env.BLAZEGRAPH_SERVICE}:${process.env.BLAZEGRAPH_PORT}/bigdata/sparql?query=` :   'http://localhost:8889/bigdata/sparql?query='
 
 console.log("URL set to: " + SPARQL_QUERY_URL)
 
@@ -31,7 +32,7 @@ app.get('/graph', (req, res) => {
     bindings.forEach((binding) => {
     results.push({"label": binding.labels.value, "iri": binding.iri.value})
 })
-    //res.send(results)
+    
     res.render('graph', {title: "My great graph!", params: results})
 });
 })
