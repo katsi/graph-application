@@ -47,7 +47,7 @@ cd Downloads/graph-application-master/
 
 For this tutorial I am using [Blazegraph](https://wiki.blazegraph.com/wiki/index.php/About_Blazegraph) graph database,
 because it is open-source and [most-likely](https://www.i-programmer.info/news/84-database/11358-amazon-neptune-graph-database.html)
-Amazon neptune available on AWS is [based on Blazegraph](https://www.i-programmer.info/news/84-database/11358-amazon-neptune-graph-database.html).
+Amazon Neptune available on AWS is [based on Blazegraph](https://www.i-programmer.info/news/84-database/11358-amazon-neptune-graph-database.html).
 Certainly the experience of using both is the same.
 
 
@@ -190,3 +190,13 @@ as defined in line 8 and asks for the response to be in JSON format `{headers: {
 
 From that response we are extracting the `iri` and `labels` values that should be returned from our query. These values are then
 pushed to the variable `results`. These results are read by the [graph.ejs](graph.ejs) template and rendered as a view.
+
+## Run the Entire Program The Easy Way
+
+Navigate to the root of this repository. Run:
+
+```
+docker-compose up
+```
+
+Then navigate to [http://localhost:3001/graph](http://localhost:3001/graph) to see the end result. 

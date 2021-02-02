@@ -1,0 +1,11 @@
+FROM node:12
+
+WORKDIR app/
+
+COPY ./src/package.json /app
+RUN npm install
+COPY ./src /app
+
+EXPOSE 3000
+
+CMD node index.js
