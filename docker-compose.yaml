@@ -9,7 +9,7 @@ services:
       context: .
       dockerfile: Dockerfile_frontend
     ports:
-      - "3000:3000"
+      - "3001:3000"
     links:
       - blazegraph
   blazegraph:
