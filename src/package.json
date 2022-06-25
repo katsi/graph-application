@@ -28,6 +28,6 @@
   "dependencies": {
     "ejs": "^3.1.5",
     "express": "^4.16.3",
-    "node-fetch": "^2.2.0"
+    "node-fetch": "^2.6.7"
   }
 }
