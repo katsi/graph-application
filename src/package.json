@@ -27,7 +27,7 @@
   "homepage": "https://github.com/katsi/graph-application#readme",
   "dependencies": {
     "ejs": "^3.1.5",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "node-fetch": "^2.2.0"
   }
 }
